@@ -1,18 +1,19 @@
 import Card from '../Card/Card.jsx';
-import {ContainerCards} from "./Cards.js";
+import {ContainerCards} from "./Cards.js";      //CSS
 
 
-export default function Cards(props) {
-   const { characters } = props;
+export default function Cards({characters, onClose}) {
    return (
       <ContainerCards>
-         {characters.map( ({name,species,gender,image}) => {
+         {characters.map( ({id,name,species,gender,image}) => {
             return (
                <Card 
+                  id = {id}
                   name = {name} 
                   species = {species}
                   gender = {gender}
                   image = {image}
+                  onClose = {onClose}
                />
             );
          } )}

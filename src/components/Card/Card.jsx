@@ -1,15 +1,13 @@
-import {Carta,Boton,Imagen,Datos,Nombre} from "./Card.js";
+import {Carta,Boton,Imagen,Datos,Nombre} from "./Card.js";  //CSS
 
-export default function Card({name,species,gender,image}) {
-   const OnClose = () => window.alert('Emulamos que se cierra la card')
+export default function Card({id,name,species,gender,image,onClose}) {
    return (
       <Carta>
-         <Boton onClick={OnClose}>X</Boton>
-         <Imagen  src={image} alt="" />
+         <Boton onClick={() => onClose(id)}>X</Boton>
+         <Imagen src={image} alt=""/>
          <Nombre>Nombre: {name}</Nombre>
          <Datos>Especie: {species}</Datos>
          <Datos>Género: {gender}</Datos>
-         
       </Carta>
    );
 }

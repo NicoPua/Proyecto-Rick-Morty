@@ -1,10 +1,17 @@
-import {BoxSearch, Input,Boton} from "./SearchBar.js";
+import { useState } from "react";
+import {BoxSearch, Input,Boton} from "./SearchBar.js"; //CSS
 
-export default function SearchBar({OnSearch}) {
+export default function SearchBar({onSearch}) {
+   const [id,setId] = useState("");
+
+   const handleChange = (event) =>{
+      setId(event.target.value);
+   }
+
    return (
       <BoxSearch>
-          <Input type='search' />
-         <Boton onClick={(id) =>{OnSearch(id)}}>Agregar</Boton>
+          <Input type='search' onChange={handleChange} />
+         <Boton onClick={() => onSearch(id)} >Agregar</Boton>
       </BoxSearch>
    );
 }
