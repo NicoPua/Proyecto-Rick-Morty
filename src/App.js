@@ -3,7 +3,10 @@ import './App.css'
 
 import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav.jsx'
-//import characters from './data.js'
+import About from './views/About.jsx'
+import Detail from './views/Detail.jsx'
+
+import { Route } from 'react-router-dom'
 
 
 function App () {
@@ -30,12 +33,22 @@ function App () {
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <div>
+      <Route path='/' component={Nav}/>
+
+      <Route path='/home' component={Cards}/>
+
+      <Route path='/about' component={About}/>
+
+      <Route path='/detail/:detailId' component={Detail}/>
+    </div>
+  )
+} 
+
+/*ADENTRO DEL RETURN y adentro de DIV
+  <div>
         <Nav onSearch={onSearch}/>
       </div>
       <Cards characters={characters} onClose={onClose}/>         
-    </div>
-  )
-}
+*/
 
 export default App;
