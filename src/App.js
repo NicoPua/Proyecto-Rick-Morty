@@ -5,8 +5,9 @@ import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav.jsx'
 import About from './views/About.jsx'
 import Detail from './views/Detail.jsx'
+import Form from './components/Form/Form.jsx'
 
-import { Route } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 
 
 function App () {
@@ -16,39 +17,40 @@ function App () {
     const URL = 'https://be-a-rym.up.railway.app/api';
     const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';
 
+    if (characters.find((char) => char.id === id)) {
+      alert('Personaje Repetido')
+    }
+
     fetch(`${URL}/character/${id}?key=${KEY}`)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.name && !characters.find((char) => char.id === data.id)) {
+      .then((response) => response.json())
+      .then((data) => {
+      if (data.name ) {
         setCharacters((oldChar) => [...oldChar, data]); //Recibo el estado viejo y retorno el estado nuevo.
       } else {
         alert('No hay personajes con ese ID');
       }
-    });
+    });  
   }
 
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id !== id));
   }
 
+  const location = useLocation();
+
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <Route path='/' component={Nav}/>
-
-      <Route path='/home' component={Cards}/>
-
-      <Route path='/about' component={About}/>
-
-      <Route path='/detail/:detailId' component={Detail}/>
+      {
+        location.pathname!=='/'? <Nav onSearch={onSearch}/>:('')
+      } 
+          <Routes>
+            <Route path='/' element={<Form />} /> 
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
+            <Route path='/about' element={<About />}/>
+            <Route path='/detail/:detailId' element={<Detail />}/>
+          </Routes>     
     </div>
   )
 } 
-
-/*ADENTRO DEL RETURN y adentro de DIV
-  <div>
-        <Nav onSearch={onSearch}/>
-      </div>
-      <Cards characters={characters} onClose={onClose}/>         
-*/
 
 export default App;

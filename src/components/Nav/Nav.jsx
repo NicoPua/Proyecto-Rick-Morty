@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 export default function Nav({onSearch}) {
    return (
     <div>
+        <SearchBar onSearch={onSearch}/>
         <Link to='/home'>
             <p>Home</p>
         </Link>
@@ -11,7 +12,6 @@ export default function Nav({onSearch}) {
         <Link to='/about'>
             <p>About</p>
         </Link>
-        <SearchBar onSearch={onSearch}/>
     </div>
    );
 }
