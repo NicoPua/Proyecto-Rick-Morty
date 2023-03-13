@@ -11,14 +11,12 @@ la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
 const validation = (form,setErrors,errors) => {
     if(!form.username){
         setErrors({...errors,username:'E-mail vacío'});
-    }else if(form.username.length < 35 ){
-        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(form.username)){
-            setErrors({...errors,username: ''});
-        }else{
-            setErrors({...errors,username: 'E-mail invalido'});
-        }
+    }else if(form.username.length > 35 ){
+        setErrors({...errors,username: 'Exceso de characters'});       
+    }else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(form.username)){
+        setErrors({...errors,username: 'E-mail invalido'});
     }else{
-        setErrors({...errors,username: 'Exceso de characters'});
+        setErrors({...errors,username: ''});
     }
 
     if (!form.password) {
