@@ -1,6 +1,6 @@
 import React from "react";
 import validation from "./validation.js";
-//import {useNavigate} from 'react-router-dom';
+
 
 const Form = ({login}) => {
     const [userData, setUserData] = React.useState({
@@ -22,7 +22,7 @@ const Form = ({login}) => {
                 [prop]: value,
             }
         );
-        validation({...userData,[prop]: value,},setErrors,errors);
+        validation({...userData,[prop]: value,},setErrors,errors);  //Valido los datos ingresados y le envío errors y setErrors.
     };
 
     const handleSubmit = () =>{
