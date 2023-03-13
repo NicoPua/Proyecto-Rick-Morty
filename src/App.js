@@ -32,30 +32,30 @@ function App () {
     });  
   }
 
-  //App.js
+  //LOGIN
   const [access, setAccess] = useState(false);
   const username = 'nicopua7@gmail.com';
   const password = 'asd1234';
   const navigate = useNavigate();
 
-  //LOGIN
   const login = (userData) => {
     if (userData.username == username && userData.password == password) {
       setAccess(true);
       navigate('/home');
     }  
   }
+
   useEffect(() => {
     !access && navigate('/');
   }, [access]);
-  //---------------------------------------------
-
+  //------------------------------------------------------------------------
+  
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id !== id));
   }
 
   const location = useLocation(); 
-
+ 
   return (
     <div className='App' style={{ padding: '25px' }}>
       {
