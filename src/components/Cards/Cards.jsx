@@ -5,7 +5,7 @@ import {ContainerCards} from "./Cards.js";      //CSS
 export default function Cards({characters, onClose}) {
    return (
       <ContainerCards>
-         {characters.map( ({id,name,species,gender,image}) => {
+         {characters.map(({id,name,species,gender,image}) => {
             return (
                <Card 
                   id = {id}
