@@ -21,15 +21,15 @@ const validation = (form,setErrors,errors) => {
 
     if (!form.password) {
         setErrors({...errors,password: 'Pass vacía'});
-    }else if(form.password.trim().length >= 6 && form.password.trim().length <= 10){        //.trim() descarto lo espacios.
-        
-        if(form.password.map((char) => isNaN(char)) === true) setErrors({...errors,password: ''});
-        else setErrors({...errors,password: 'Debe contener al menos un Número'});
 
-    }else{
+    }else if(form.password.length < 6 && form.password.length > 10){        //.trim() descarto lo espacios.
         setErrors({...errors,password: 'Debe contener entre 6 y 10 characters'});
-    }
-    //{...errors,password: 'Debe contener al menos un Número'}
+
+    }else if(!/\d/.test(form.password)) {
+        setErrors({...errors,password: 'Debe contener al menos un Número'}); //{...errors,password: 'Debe contener al menos un Número'}
+
+    }else setErrors({...errors,password: ''});
+    
 }
 
 export default validation;
