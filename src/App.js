@@ -18,13 +18,13 @@ function App () {
     const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';
 
     if (characters.find((char) => char.id === id)) {
-      alert('Personaje Repetido')
+      return alert('Personaje Repetido');
     }
 
     fetch(`${URL}/character/${id}?key=${KEY}`)
       .then((response) => response.json())
       .then((data) => {
-      if (data.name ) {
+      if (data.name) {
         setCharacters((oldChar) => [...oldChar, data]); //Recibo el estado viejo y retorno el estado nuevo.
       } else {
         alert('No hay personajes con ese ID');
@@ -41,11 +41,11 @@ function App () {
   const login = (userData) => {
     if (userData.username == username && userData.password == password) {
       setAccess(true);
-      navigate('/home');
+      navigate('/home');    //Te lleva a '/home' y el access  es 'true'.
     }  
   }
 
-  useEffect(() => {
+  useEffect(() => {           //Esto no dejará navegar por la aplicación, al menos que ingrese la información correcta.
     !access && navigate('/');
   }, [access]);
   //------------------------------------------------------------------------
@@ -59,7 +59,7 @@ function App () {
   return (
     <div className='App' style={{ padding: '25px' }}>
       {
-        location.pathname!=='/'? <Nav onSearch={onSearch}/>:('')
+        location.pathname!=='/' && <Nav onSearch={onSearch}/>
       } 
       <Routes>
         <Route path='/' element={<Form login={login}/>} /> 
