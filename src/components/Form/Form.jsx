@@ -9,23 +9,20 @@ const Form = ({login}) => {
     });
     
     const [errors, setErrors] = React.useState({
-            username: '', 
-            password: '' 
+        username: '', 
+        password: '' 
     });
 
     const handleInputChange = (event) =>{
         const prop = event.target.name;
         const value = event.target.value;
-        setUserData(
-            {
-                ...userData,
-                [prop]: value,
-            }
-        );
+
+        setUserData({...userData,[prop]: value,});
         validation({...userData,[prop]: value,},setErrors,errors);  //Valido los datos ingresados y le envío errors y setErrors.
     };
 
-    const handleSubmit = () =>{
+    const handleSubmit = (event) =>{
+        event.preventydefault();
         login(userData);
     }
 
