@@ -3,9 +3,6 @@ import {Link} from 'react-router-dom'
 
 export default function Nav({onSearch}) {
     
-  const logout = () =>{
-    
-  }
   return (
     <div>
       <SearchBar onSearch={onSearch}/>
@@ -17,7 +14,7 @@ export default function Nav({onSearch}) {
         <p>About</p>
       </Link>
 
-      <Link to={logout}>
+      <Link to='/'>
         <p>Log Out</p>
       </Link>
     </div>
