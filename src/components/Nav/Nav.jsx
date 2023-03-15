@@ -14,6 +14,10 @@ export default function Nav({onSearch}) {
         <p>About</p>
       </Link>
 
+      <Link to='/favorites'>
+        <p>Favorites</p>
+      </Link>
+
       <Link to='/'>
         <p>Log Out</p>
       </Link>
