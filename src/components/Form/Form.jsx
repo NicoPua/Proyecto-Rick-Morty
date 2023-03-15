@@ -22,7 +22,7 @@ const Form = ({login}) => {
     };
 
     const handleSubmit = (event) =>{
-        event.preventydefault();
+        event.preventDefault();
         login(userData);
     }
 
