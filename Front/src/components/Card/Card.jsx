@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Carta,Boton,Imagen,Datos,Nombre } from "./Card.js";  //CSS
+import { Carta,Boton,Imagen,Datos,Nombre } from "../Card/Card.js";  //CSS
 import { addCharacters, delCharacters } from "../../redux/actions.js";
 
 import { connect } from "react-redux";
