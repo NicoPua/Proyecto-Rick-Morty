@@ -1,5 +1,5 @@
 import React from "react";
-import validation from "../Form/validation.js";
+import validation from "./validation.js";
 
 
 const Form = ({login}) => {
