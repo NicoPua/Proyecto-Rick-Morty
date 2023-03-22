@@ -1,8 +1,5 @@
 const characters = require("./utils/data.js");
-
-var http = require("http");
-var fs = require("fs");
-
+const http = require("http");
 const PORT = 3001;
 
 http.createServer((req,res) => {
@@ -10,8 +7,8 @@ http.createServer((req,res) => {
     const {URL} = req;
 
     if(URL.includes('rickandmorty/character')){
-       const id = Number(URL.split("/").at(-1));
-       const character = characters.find((char) => char.id === id)
+       const id = URL.split("/");        //agregar NUMBER ()
+       const character = characters.find((char) => char.id == id)
 
        if(character){
         res.writeHead({"Content-Type": "application/json"});
@@ -21,4 +18,5 @@ http.createServer((req,res) => {
         return res.end(JSON.stringify({ error: "Character not found" }));
        }
     }
+    
 }).listen(PORT,"localhost");
