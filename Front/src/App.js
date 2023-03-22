@@ -20,7 +20,7 @@ function App () {
     //const URL = 'https://be-a-rym.up.railway.app/api';
     //const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';  ?key=${KEY}
 
-    if (characters.find((char) => char.id === id)) {
+    if (characters.find((char) => char.id == id)) {
       return alert('Personaje Repetido');
     }
 
