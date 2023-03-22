@@ -15,14 +15,16 @@ function App () {
   const [characters,setCharacters] = useState([]);
 
   const onSearch = (id) => {
-    const URL = 'https://be-a-rym.up.railway.app/api';
-    const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';
+    
+    const URL = 'http://localhost:3001/rickandmorty';
+    //const URL = 'https://be-a-rym.up.railway.app/api';
+    //const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';  ?key=${KEY}
 
     if (characters.find((char) => char.id === id)) {
       return alert('Personaje Repetido');
     }
 
-    fetch(`${URL}/character/${id}?key=${KEY}`)
+    fetch(`${URL}/character/${id}`)
       .then((response) => response.json())
       .then((data) => {
       if (data.name) {

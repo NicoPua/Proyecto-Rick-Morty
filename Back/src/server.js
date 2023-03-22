@@ -1,16 +1,24 @@
-import characters from "./utils/data.js";
+const characters = require("./utils/data.js");
 
 var http = require("http");
 var fs = require("fs");
 
 const PORT = 3001;
 
-module.exports = 
-    http.createServer((req,res) => {
-        console.log(`Server raised in port ${PORT}`);
-        res.setHeader('Access-Control-Allow-Origin', '*');
+http.createServer((req,res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    const {URL} = req;
 
-        if(req.url = 'rickandmorty/character'){
-            //FALTA EJERCICIO 3
-        }
-    }).listen(PORT,"localhost");
+    if(URL.includes('rickandmorty/character')){
+       const id = Number(URL.split("/").at(-1));
+       const character = characters.find((char) => char.id === id)
+
+       if(character){
+        res.writeHead({"Content-Type": "application/json"});
+        return res.end(JSON.stringify(character));
+       }else{
+        res.writeHead(404, {"Content-Type": "application/json"});
+        return res.end(JSON.stringify({ error: "Character not found" }));
+       }
+    }
+}).listen(PORT,"localhost");
