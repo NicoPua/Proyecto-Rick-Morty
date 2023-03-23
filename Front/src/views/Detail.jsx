@@ -7,8 +7,9 @@ const Detail = () =>{
 
     const [character,setCharacter] = useState({});
 
-    const URL = 'https://be-a-rym.up.railway.app/api';
-    const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';
+    const URL = "http://localhost:3001/rickandmorty/detail"; //FALTA
+    //const URL = 'https://be-a-rym.up.railway.app/api';
+    //const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';
 
     useEffect(() => {                           //SIEMPRE (cb'()=>{}', ARRAY'[]'). useEffect se ejecuta cuando se monta el componente.
         axios(`${URL}/character/${detailId}?key=${KEY}`)

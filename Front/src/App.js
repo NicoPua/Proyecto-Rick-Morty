@@ -17,7 +17,7 @@ function App () {
   //FUNCION PARA BUSCAR----------------------------------------------
   const onSearch = (id) => {
     
-    const URL = 'http://localhost:3001/rickandmorty';
+    const URL = 'http://localhost:3001/rickandmorty'; //FALTA http://localhost:3001/rickandmorty/onsearch/
 
 
     //const URL = 'https://be-a-rym.up.railway.app/api';
