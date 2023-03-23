@@ -1,5 +1,5 @@
-import getCharById from "./controllers/getCharById.js" 
-import getCharDetail from "./controllers/getCharDetail.js";
+const getCharById = require("./controllers/getCharById.js");
+const getCharDetail = require("./controllers/getCharDetail.js");
 
 
 const http = require("http");
