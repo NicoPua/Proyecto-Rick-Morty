@@ -18,8 +18,6 @@ function App () {
   const onSearch = (id) => {
     
     const URL = 'http://localhost:3001/rickandmorty'; //FALTA http://localhost:3001/rickandmorty/onsearch/
-
-
     //const URL = 'https://be-a-rym.up.railway.app/api';
     //const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';  
     //`${URL}/character/${id}?key=${KEY}`
@@ -28,7 +26,7 @@ function App () {
       return alert('El Personaje ya fue añadido');
     }
 
-    fetch(`${URL}/character/${id}`)
+    fetch(`${URL}/onsearch/${id}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
