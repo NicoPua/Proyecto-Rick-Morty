@@ -1,26 +1,33 @@
 import SearchBar from '../Search/SearchBar.jsx'
 import {Link} from 'react-router-dom'
+import {AllBar,LinksBar} from './Nav.js'; //CSS
 
 export default function Nav({onSearch}) {
     
   return (
-    <div>
-      <SearchBar onSearch={onSearch}/>
-      <Link to='/home'>
-        <p>Home</p>
-      </Link>
-        
-      <Link to='/about'>
-        <p>About</p>
-      </Link>
+    <AllBar>
 
-      <Link to='/favorites'>
-        <p>Favorites</p>
-      </Link>
+      <LinksBar>
+        <Link to='/home'>
+          <p>Home</p>
+        </Link>
+      
+        <Link to='/about'>
+          <p>About</p>
+        </Link>
+      
+        <Link to='/favorites'>
+          <p>Favorites</p>
+        </Link>
+      
+        <Link to='/'>
+          <p>Log Out</p>
+        </Link>
+      </LinksBar>  
 
-      <Link to='/'>
-        <p>Log Out</p>
-      </Link>
-    </div>
+      <div>
+        <SearchBar onSearch={onSearch}/>
+      </div>
+    </AllBar>
     );
 }
