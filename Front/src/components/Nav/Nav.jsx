@@ -1,6 +1,6 @@
 import SearchBar from '../Search/SearchBar.jsx'
 import {Link} from 'react-router-dom'
-import {AllBar,LinksBar} from './Nav.js'; //CSS
+import {AllBar,LinksBar,Buscador} from './Nav.js'; //CSS
 
 export default function Nav({onSearch}) {
     
@@ -25,9 +25,9 @@ export default function Nav({onSearch}) {
         </Link>
       </LinksBar>  
 
-      <div>
+      <Buscador>
         <SearchBar onSearch={onSearch}/>
-      </div>
+      </Buscador>
     </AllBar>
     );
 }
