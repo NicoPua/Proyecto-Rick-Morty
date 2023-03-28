@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerCards = styled.div`
 border-style: solid;
-border-radius: 20px;
+border-radius: 10px;
 
 box-shadow: -8px 9px 14px -3px rgba(0,0,0,0.75);
 -webkit-box-shadow: -8px 9px 14px -3px rgba(0,0,0,0.75);
