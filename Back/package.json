@@ -13,6 +13,7 @@
   "author": "Nicolas Pua",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "nodemon": "^2.0.21"
   }
 }
