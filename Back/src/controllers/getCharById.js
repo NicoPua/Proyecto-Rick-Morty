@@ -1,3 +1,20 @@
+const getCharById = (req,res) => {
+    const URL = 'https://be-a-rym.up.railway.app/api';
+    const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';    
+    const {id} = req.params;
+
+    fetch(`${URL}/character/${id}?key=${KEY}`)
+    .then(response => response.json)
+    .then(({id, name, species, image, gender}) => {
+        res.status(200).json({id, name, species, image, gender});
+    })
+    .catch((reason) => {
+        res.status(500).json(reason.message);
+    }) 
+}
+
+/*getCharByID 1-------------------------------------------------
+
 const success = ({id,image,name,gender,species}, res) =>{
     const save = {
         id,
@@ -28,4 +45,4 @@ const getCharById = (res,id) => {
     .catch((reason) => errorH(reason,res))     
 }
 
-module.exports = getCharById;
+module.exports = getCharById; */
