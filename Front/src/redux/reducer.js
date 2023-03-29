@@ -1,32 +1,33 @@
-import { ADD_CHAR,DEL_CHAR,FILTER,ORDER } from "./actions"
+import { ADD_CHAR,DEL_CHAR,FILTER,ORDER,CLEAN_DETAIL } from "./actions"
 
 const initialState = {
     myFavorites: [],
-    allCharacters: []
+    //allCharacters: [],
+    characterDetail: {}
 }
 
 const rootReducer = (state = initialState,action) =>{
     switch(action.type){
         case ADD_CHAR: return {
             ...state,
-            myFavorites: [...state.allCharacters, action.payload ],
-            allCharacters: [...state.allCharacters, action.payload ]
+            myFavorites: [...state.myFavorites, action.payload ]
+            //allCharacters: [...state.allCharacters, action.payload ]
         }
 
         case DEL_CHAR: return {
             ...state,
-            myFavorites: state.myFavorites.filter((char) => char.id !== action.payload )    //DUDA
+            myFavorites: state.myFavorites.filter((char) => char.id !== action.payload )    
         };  
 
         case FILTER: return {
             ...state,
-            myFavorites: state.allCharacters.filter((char)=> char.gender === action.payload)        //DUDA
+            myFavorites: state.myFavorites.filter((char)=> char.gender === action.payload)        
         };
 
         case ORDER: 
-            const allCharacters2 = state.allCharacters;
+            const allCharacters = state.myFavorites;
 
-            const Sort = (state.payload === 'Ascendente'? allCharacters2.sort((a,b) => {
+            const Sort = (state.payload === 'Ascendente'? allCharacters.sort((a,b) => {
                 if (a.id > b.id) {
                     return 1;
                 }
@@ -34,7 +35,7 @@ const rootReducer = (state = initialState,action) =>{
                     return -1;
                 }
                 return 0;
-            }) : allCharacters2.sort((a,b) => {
+            }) : allCharacters.sort((a,b) => {
                 if (a.id > b.id) {
                     return -1;
                 }
@@ -48,6 +49,11 @@ const rootReducer = (state = initialState,action) =>{
             myFavorites: Sort
         }
         
+        case CLEAN_DETAIL: return {
+            ...state,
+            characterDetail: {}
+        }
+
         default: return {...state}
     }
 }
