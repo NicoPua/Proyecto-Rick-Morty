@@ -1,3 +1,19 @@
+const express = require("express");
+const server = express();
+const PORT = 3001;
+
+const router = require("./routes/index.js")
+
+server.use(express.json());
+server.use("/", router);
+
+
+server.listen(PORT, () =>{
+    console.log('Server raised in port ' + PORT);
+})
+
+
+/* SERVER 2----------------------------------------------------------------
 const getCharById = require("./controllers/getCharById.js");
 const getCharDetail = require("./controllers/getCharDetail.js");
 
@@ -18,9 +34,11 @@ http.createServer((req,res) => {
         const id = Number(url.split("/").at(-1));
         getCharDetail(res,id)
     }
-}).listen(PORT,"localhost");
+}).listen(PORT,"localhost");*/
 
-/*const characters = require("./utils/data.js");
+/* SERVER 1 ------------------------------------------------------------------
+
+const characters = require("./utils/data.js");
 const http = require("http");
 const PORT = 3001;
 
