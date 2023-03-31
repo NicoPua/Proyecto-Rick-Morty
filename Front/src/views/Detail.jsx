@@ -1,18 +1,20 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from 'axios';
+//import { useEffect, useState } from "react";
+//import { useParams } from "react-router-dom";
+//import axios from 'axios';
+import useCharacter from "../hooks/useCharacter";
 
 const Detail = () =>{
-    const {detailId} = useParams();         //useParams() DEVUELVE UN OBJ QUE TIENE EL VALOR DE ':detailId' en la URL.
+    //const {detailId} = useParams();         //useParams() DEVUELVE UN OBJ QUE TIENE EL VALOR DE ':detailId' en la URL.
+    //const [character,setCharacter] = useState({});
 
-    const [character,setCharacter] = useState({});
+    const character = useCharacter();
 
-    const URL = "http://localhost:3001/rickandmorty"; //FALTA
+    /*const URL = "http://localhost:3001/rickandmorty"; 
 
     useEffect(() => {                           //SIEMPRE (cb'()=>{}', ARRAY'[]'). useEffect se ejecuta cuando se monta el componente.
         axios(`${URL}/detail/${detailId}`)
         .then(response=> setCharacter(response.data))   //SETEO character para igualarlo con la RESPUESTA de axios  
-    },[])
+    },[detailId])*/
     
     return (                    //SIEMPRE que se modifica el estado (character, en este caso), se vuelve a ejecutar el render() o return().
         <div>

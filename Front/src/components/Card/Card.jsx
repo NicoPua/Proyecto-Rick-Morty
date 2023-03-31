@@ -5,7 +5,9 @@ import { addCharacters, delCharacters } from "../../redux/actions.js";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
-function Card({id,name,species,gender,image,onClose,addCharacters,delCharacters,myFavorites}) {
+
+
+function Card({id,name,species,gender,image,onClose,addCharacters, delCharacters,myFavorites}) {
    const [isFav,setIsFav] = useState(false);
 
    const handleFavorite = () => {
@@ -14,7 +16,7 @@ function Card({id,name,species,gender,image,onClose,addCharacters,delCharacters,
          delCharacters(id);
       }else{
          setIsFav(true);
-         addCharacters({id,name,species,gender,image,onClose,addCharacters,delCharacters})
+         addCharacters({id,name,species,gender,image,onClose})
       }
    }
 
@@ -24,7 +26,7 @@ function Card({id,name,species,gender,image,onClose,addCharacters,delCharacters,
             setIsFav(true);
          }
       });
-   }, [myFavorites]);
+   }, [id,myFavorites]);
 
    return (
       <Carta>

@@ -28,6 +28,7 @@ export default function Nav({onSearch}) {
       <Buscador>
         <SearchBar onSearch={onSearch}/>
       </Buscador>
+      
     </AllBar>
     );
 }

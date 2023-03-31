@@ -9,6 +9,7 @@ import Form from './components/Form/Form.jsx';
 import Favorites from './components/Favorites/Favorites';
 
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 function App () {
@@ -17,7 +18,7 @@ function App () {
   //FUNCION PARA BUSCAR----------------------------------------------
   const onSearch = (id) => {
     
-    const URL = 'http://localhost:3001/rickandmorty'; //FALTA http://localhost:3001/rickandmorty/onsearch/
+    const URL = 'http://localhost:3001';
     //const URL = 'https://be-a-rym.up.railway.app/api';
     //const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';  
     //`${URL}/character/${id}?key=${KEY}`
@@ -26,12 +27,11 @@ function App () {
       return alert('El Personaje ya fue añadido');
     }
 
-    fetch(`${URL}/onsearch/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.name) {
-          setCharacters((oldChar) => [...oldChar, data]); //Recibo el estado viejo y retorno el estado nuevo.
+    axios(`${URL}/onsearch/${id}`)
+      .then((response) => {
+        const {name} = response.data;
+        if (name) {
+          setCharacters((oldChar) => [...oldChar, response.data]); //Recibo el estado viejo y retorno el estado nuevo.
         } else {
           alert('No hay personajes con ese ID');
         }
