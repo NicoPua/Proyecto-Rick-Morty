@@ -1,9 +1,10 @@
 const About = () =>{
     return(
         <div>
-            <p>El general José de San Martín nació el 25 de febrero de 1778. Es una de las personalidades de la historia argentina que logró el reconocimiento indiscutido de todos los argentinos y argentinas. Fue una figura clave para la concreción y la consolidación de nuestra independencia política. Además, contribuyó de manera decisiva en los procesos independentistas de Chile y del Perú; por lo tanto, fue un hombre indispensable para la emancipación de los pueblos sudamericanos. Cada 17 de agosto se conmemora su paso a la inmortalidad. La Biblioteca Nacional de Maestras y Maestros invita a hacer un recorrido por variados recursos audiovisuales, frases y juegos, destinados a la comunidad educativa y a toda la familia.</p>
-            <p>El general José de San Martín nació el 25 de febrero de 1778. Es una de las personalidades de la historia argentina que logró el reconocimiento indiscutido de todos los argentinos y argentinas. Fue una figura clave para la concreción y la consolidación de nuestra independencia política. Además, contribuyó de manera decisiva en los procesos independentistas de Chile y del Perú; por lo tanto, fue un hombre indispensable para la emancipación de los pueblos sudamericanos. Cada 17 de agosto se conmemora su paso a la inmortalidad. La Biblioteca Nacional de Maestras y Maestros invita a hacer un recorrido por variados recursos audiovisuales, frases y juegos, destinados a la comunidad educativa y a toda la familia.</p>
-            <p>El general José de San Martín nació el 25 de febrero de 1778. Es una de las personalidades de la historia argentina que logró el reconocimiento indiscutido de todos los argentinos y argentinas. Fue una figura clave para la concreción y la consolidación de nuestra independencia política. Además, contribuyó de manera decisiva en los procesos independentistas de Chile y del Perú; por lo tanto, fue un hombre indispensable para la emancipación de los pueblos sudamericanos. Cada 17 de agosto se conmemora su paso a la inmortalidad. La Biblioteca Nacional de Maestras y Maestros invita a hacer un recorrido por variados recursos audiovisuales, frases y juegos, destinados a la comunidad educativa y a toda la familia.</p>
+            <h2>Rick and Morty API</h2>
+            
+            <p>Página creada y diseñada desde el Back-End hasta el Front-end de la mano de Henry.</p>
+            <p></p>
         </div>
     )
 }

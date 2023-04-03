@@ -1,6 +1,6 @@
 import React from "react";
 import validation from "./validation.js";
-import {ContainerGlobal,Inicio,Titulos,Info,Publi,ImgHenry} from "./Form.js";
+import {ContainerGlobal,Inicio,Titulos,ImgRyM,Info,Publi,ImgHenry} from "./Form.js";
 
 
 const Form = ({login}) => {
@@ -32,6 +32,7 @@ const Form = ({login}) => {
             <Inicio>
                 <Titulos>
                     <h1>Welcome to Rick and Morty API</h1>
+                    <ImgRyM src="https://static.posters.cz/image/hp/66133.jpg"/>
                     <h3>Made by Gonzalo Nicolás Púa</h3>
                 </Titulos> 
 

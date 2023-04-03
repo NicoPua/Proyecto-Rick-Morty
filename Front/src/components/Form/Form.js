@@ -3,12 +3,19 @@ import styled from "styled-components";
 
 export const ContainerGlobal = styled.div`
     height: 550px;
+
+    padding-top: 10px;
+    padding-bottom: 20px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 
     
+    
 `
+
+//----------------------------------------------------
 export const Inicio = styled.div`
     background-color: #994C00;
     width: 60%;
@@ -17,6 +24,8 @@ export const Inicio = styled.div`
     box-shadow: -8px 9px 14px -3px rgba(0,0,0,0.75);
     
     margin-top: 75px;
+    padding-top: 1%;
+    padding-bottom: 1%;
 
     display: flex;
     flex-direction: column;
@@ -24,13 +33,20 @@ export const Inicio = styled.div`
 
     
 ` 
-
+//----------------------------------------------------
 export const Titulos = styled.div`
     font-family: sans-serif;
     font-style: oblique;
     text-decoration: underline;
 ` 
 
+export const ImgRyM = styled.img`
+    width: 500px;
+    border-radius: 20px;
+`
+
+
+//-----------------------------------------------------
 export const Info = styled.div`
     background-color: white;
     height: 400px;
@@ -64,3 +80,4 @@ export const ImgHenry = styled.img`
     box-shadow: -8px 9px 14px -3px rgba(0,0,0,0.75);
     border-radius: 20px;
 `
+//-----------------------------------------------------
