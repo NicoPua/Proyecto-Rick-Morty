@@ -16,13 +16,27 @@ export const InfoRyM = styled.div`
 
 `
 export const InfoAboutMe = styled.div`
-    background-color: violet;
-    height: 570px;
+    background: url("https://wallpaperaccess.com/full/2314983.jpg");
+    height: 540px;
     width: 25%;
+    margin-top: 1%;
 
+    box-shadow: 0px 3px 11px 7px rgba(0,0,0,0.75);
+    border-radius: 20px; 
+
+`
+export const ImgProfile = styled.img`
+    width: 30%;
+    border-radius: 20px;    
+    box-shadow: 0px 3px 11px 7px rgba(0,0,0,0.75);
 
 `
 
+export const ContImgs = styled.div`
+    width: 100%;
+`
+
 export const LinksImgs = styled.img`
-    width: 15%;
+    width: 10%;
+    border-radius: 20px;
 `
