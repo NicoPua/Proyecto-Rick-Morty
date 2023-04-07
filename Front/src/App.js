@@ -19,15 +19,12 @@ function App () {
   const onSearch = (id) => {
     
     const URL = 'http://localhost:3001';
-    //const URL = 'https://be-a-rym.up.railway.app/api';
-    //const KEY = 'ab609bfc7704.d3a36031c2ddc6820402';  
-    //`${URL}/character/${id}?key=${KEY}`
 
-    if (characters.find((char) => char.id == id)) {
+    if (characters.find((char) => char.id === id)) {
       return alert('El Personaje ya fue añadido');
     }
 
-    axios(`${URL}/onsearch/${id}`)
+    axios.get(`${URL}/onsearch/${id}`)
       .then((response) => {
         const {name} = response.data;
         if (name) {
@@ -46,7 +43,7 @@ function App () {
   
   const navigate = useNavigate();
   const login = (userData) => {
-    if (userData.username == username && userData.password == password) {
+    if (userData.username === username && userData.password === password) {
       setAccess(true);
       navigate('/home');    //Te lleva a '/home' y el access  es 'true'.
     }  
