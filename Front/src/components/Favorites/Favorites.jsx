@@ -1,10 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { filterCards, orderCards } from "../../redux/actions.js";
+import { useEffect } from "react";
+import { filterCards, getFavorites, orderCards } from "../../redux/actions.js";
 import Card from "../Card/Card.jsx";
 
 const Favorites = () => {
     const favorites = useSelector((state)=> state.myFavorites)
     const dispatch = useDispatch();
+
+    useEffect(() => {                   //Pido los favoritos que están guardados en la base de datos.
+        dispatch(getFavorites());
+    }, [])
 
     const ordenamiento = (event) =>{
         dispatch(orderCards(event.target.value));
@@ -17,11 +22,12 @@ const Favorites = () => {
     return(
     <div>
         <select name="Order" onChange={ordenamiento}>
+            <option value= "Ordenar">Todos los Favs</option>
             <option value="Ascendente">Ascendente</option>
-
             <option value="Descendente">Descendente</option>
         </select>
         <select name='Filter' onChange={filtro}>
+            <option value="Filters">-Filters-</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Genderless">Genderless</option>

@@ -8,13 +8,6 @@ const Detail = () =>{
     //const [character,setCharacter] = useState({});
 
     const character = useCharacter();
-
-    /*const URL = "http://localhost:3001/rickandmorty"; 
-
-    useEffect(() => {                           //SIEMPRE (cb'()=>{}', ARRAY'[]'). useEffect se ejecuta cuando se monta el componente.
-        axios(`${URL}/detail/${detailId}`)
-        .then(response=> setCharacter(response.data))   //SETEO character para igualarlo con la RESPUESTA de axios  
-    },[detailId])*/
     
     return (                    //SIEMPRE que se modifica el estado (character, en este caso), se vuelve a ejecutar el render() o return().
         <div>

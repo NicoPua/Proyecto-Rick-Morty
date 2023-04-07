@@ -1,17 +1,15 @@
 import Card from '../Card/Card.jsx';
-import {ContainerCards} from "./Cards.js";      //CSS
-//import {getFavorites} from "../../redux/actions"
-//import { useDispatch } from "react-redux";
-//import { useEffect } from 'react';
+import { ContainerCards } from "./Cards.js";      //CSS
+import { getFavorites } from "../../redux/actions"
+import { useDispatch } from "react-redux";
+import { useEffect } from 'react';
 
 export default function Cards({characters, onClose}) {
-   
-   /*NO SÉ PARA QUÉ ES
    const dispatch = useDispatch();
 
-   useEffect(() => {
+   useEffect(() => {                   //Pido los favoritos que están guardados en la base de datos.
       dispatch(getFavorites());
-    }, [])*/
+    }, [])
    
    return (
       <ContainerCards>
@@ -28,5 +26,6 @@ export default function Cards({characters, onClose}) {
                />
             );
          } )}
-      </ContainerCards>);
+      </ContainerCards>
+   );
 }

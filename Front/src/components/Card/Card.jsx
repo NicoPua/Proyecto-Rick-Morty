@@ -1,22 +1,22 @@
 import { Link } from "react-router-dom";
 import { Carta,Boton,Imagen,Datos,Nombre } from "../Card/Card.js";  //CSS
-import { addCharacters, delCharacters } from "../../redux/actions.js";
-
+import { addFavorite, removeFavorite } from "../../redux/actions.js";
+//import axios from "axios";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
 
 
-function Card({id,name,species,gender,image,onClose,addCharacters, delCharacters,myFavorites}) {
+function Card({id,name,species,gender,image,onClose, addFavorite, removeFavorite, myFavorites}) {
    const [isFav,setIsFav] = useState(false);
-
+   
    const handleFavorite = () => {
       if (isFav) {
          setIsFav(false);
-         delCharacters(id);
+         removeFavorite(id)
       }else{
          setIsFav(true);
-         addCharacters({id,name,species,gender,image,onClose})
+         addFavorite({id,name,species,gender,image});
       }
    }
 
@@ -26,7 +26,7 @@ function Card({id,name,species,gender,image,onClose,addCharacters, delCharacters
             setIsFav(true);
          }
       });
-   }, [id,myFavorites]);
+   }, [myFavorites]);
 
    return (
       <Carta>
@@ -53,11 +53,11 @@ function Card({id,name,species,gender,image,onClose,addCharacters, delCharacters
 //mapDispatchToProps me otorga la funcion DISPATCH y lo que RETORNO lo envío a las props con el "connect(null,mapDispatchToProps)()"
 const mapDispatchToProps = (dispatch) =>{
    return {
-      addCharacters: (char) => {
-         dispatch(addCharacters(char))
+      addFavorite: (character) => {
+         dispatch(addFavorite(character))
       },
-      delCharacters: (id) => {
-         dispatch(delCharacters(id))
+      removeFavorite: (id) => {
+         dispatch(removeFavorite(id))
       }
    }
 }
