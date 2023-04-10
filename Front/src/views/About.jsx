@@ -8,8 +8,17 @@ const About = () =>{
                 
                 <p>-Página creada y diseñada desde el Back-End hasta el Front-end de la mano de Henry.-</p>
                 <h3>Descripción</h3>
-                <p>asdsadsadsdadasfaa</p>
-                
+                <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quis, et quae dicta illo iure minus ad provident aliquam quaerat aut, magnam aspernatur quo accusantium itaque vel repellat molestiae eius.
+                </p> 
             </InfoRyM>
 
             <InfoAboutMe>

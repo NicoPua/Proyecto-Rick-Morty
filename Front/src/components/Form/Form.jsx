@@ -1,6 +1,6 @@
 import React from "react";
 import validation from "./validation.js";
-import {ContainerGlobal,Inicio,Titulos,ImgRyM,Info,Publi,ImgHenry} from "./Form.js";
+import {ContainerGlobal,   Inicio,Titulos,ImgRyM,ContData,Data,LoginButton,    Info,TitleInfo,Publi,ImgHenry} from "./Form.js";
 
 
 const Form = ({login}) => {
@@ -36,20 +36,22 @@ const Form = ({login}) => {
                     <h3>Made by Gonzalo Nicolás Púa</h3>
                 </Titulos> 
 
-                <form onSubmit={handleSubmit}> 
-                    <div>
+                <ContData onSubmit={handleSubmit}> 
+                    <Data>
                         <label htmlFor="username">Username:</label>
                         <input type='text' name="username" value={userData.username} onChange={handleInputChange}/>
-                    </div>            
-                    <div>
+                    </Data>            
+                    <Data>
                         <label htmlFor="password">Password:</label>
                         <input type='text' name="password" value={userData.password} onChange={handleInputChange}/>
-                    </div>
-                    <button>Login</button>
-                </form>    
+                    </Data>
+                    <LoginButton>Login</LoginButton>
+                </ContData>   
             </Inicio>
             <Info>
-                <h3>Full Stack Developer Career</h3>
+                <TitleInfo>
+                    <h3>Full Stack Developer Career</h3>
+                </TitleInfo>
                 <p>-Carrera destinada a aquellos que quieran obtener grandes conocimientos acerca del Desarrollo Web (Back-end & Front-end).</p>
                 <h4>Modules to finish:</h4>
                 <ul>
@@ -61,7 +63,7 @@ const Form = ({login}) => {
                 
                 <Publi>
                     <ImgHenry src="https://avatars.githubusercontent.com/u/57154655?s=200&v=4"/>
-                    <p>Patrocinado por <a href="https://www.soyhenry.com/">soyHenry</a>.</p>
+                    <p>Patrocinado por <a target="_blank" rel="noopener noreferrer" href="https://www.soyhenry.com/">soyHenry</a>.</p>
                 </Publi>
             </Info>
         </ContainerGlobal>
