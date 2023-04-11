@@ -11,18 +11,14 @@ import Favorites from './components/Favorites/Favorites';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 function App () {
   const [characters,setCharacters] = useState([]);
 
   //FUNCION PARA BUSCAR----------------------------------------------
   const onSearch = (id) => {
-    
     const URL = 'http://localhost:3001';
 
-    if (characters.find((char) => char.id === id)) {
-      return alert('El Personaje ya fue añadido');
-    }
+    if (characters.find((char) => char.id === id)) return alert('El Personaje ya fue añadido');
 
     axios.get(`${URL}/onsearch/${id}`)
       .then((response) => {
@@ -46,7 +42,11 @@ function App () {
     if (userData.username === username && userData.password === password) {
       setAccess(true);
       navigate('/home');    //Te lleva a '/home' y el access  es 'true'.
-    }  
+    }else if(userData.username === '' || userData.password === '') {
+      alert("Usuario: Faltan datos por ingresar.")
+    }else{
+      alert("Usuario: Datos inválidos");
+    }
   }
 
   useEffect(() => {           //Esto no dejará navegar por la aplicación, al menos que ingrese la información correcta.

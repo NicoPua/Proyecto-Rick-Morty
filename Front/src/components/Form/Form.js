@@ -63,7 +63,7 @@ export const LoginButton = styled.button`
 export const Info = styled.div`
     background: url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png');
  
-    height: 400px;
+    height: 430px;
     width: 300px;
     border-radius: 20px;
     box-shadow: -8px 9px 14px -3px rgba(0,0,0,0.75);
