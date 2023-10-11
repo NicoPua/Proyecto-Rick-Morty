@@ -48,24 +48,6 @@ const Form = ({login}) => {
                     <LoginButton>Login</LoginButton>
                 </ContData>   
             </Inicio>
-            <Info>
-                <TitleInfo>
-                    <h3>Full Stack Developer Career</h3>
-                </TitleInfo>
-                <p>-Carrera destinada a aquellos que quieran obtener grandes conocimientos acerca del Desarrollo Web (Back-end & Front-end).</p>
-                <h4>Modules to finish:</h4>
-                <ul>
-                    <li>Module 1: Approved</li>
-                    <li>Module 2: Approved</li>
-                    <li>Module 3: Approved</li>
-                    <li>Module 4: Pending...</li>
-                </ul>
-                
-                <Publi>
-                    <ImgHenry src="https://avatars.githubusercontent.com/u/57154655?s=200&v=4"/>
-                    <p>Patrocinado por <a target="_blank" rel="noopener noreferrer" href="https://www.soyhenry.com/">soyHenry</a>.</p>
-                </Publi>
-            </Info>
         </ContainerGlobal>
     )
 }
